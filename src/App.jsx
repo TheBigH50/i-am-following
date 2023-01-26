@@ -12,15 +12,22 @@ class App extends Component {
     this.state = {
       shoppingList: ["oranges", "bananas", "brussels sprouts", "toast"],
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
+  handleSubmit(event, newListItem) {
+    event.preventDefault();
+    this.setState({
+      shoppingList: [...this.state.shoppingList, newListItem]
+    })
+  }
   
   render() {
 
      return (
     <div className='App'>
       <h1>Shopping List</h1>
-      <Form />
+      <Form handleSubmit ={this.handleSubmit}/>
       <List shoppingList ={this.state.shoppingList}/>
     </div>
   );

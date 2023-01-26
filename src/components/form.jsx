@@ -7,6 +7,7 @@ export default class Form extends Component {
       inputTextString: "",
     };
     this.handleChange = this.handleChange.bind(this);
+    
   }
 
   handleChange(event) {
@@ -15,9 +16,11 @@ export default class Form extends Component {
     });
   }
 
+ 
+
   render() {
     return (
-      <form>
+      <form onSubmit={(e) => this.props.handleSubmit(e, this.state.inputTextString)}>
         <label htmlFor="form">Input Grocery Here </label>
         <input
           type="text"
