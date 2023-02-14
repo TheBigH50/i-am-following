@@ -9,7 +9,7 @@ export default class GrootArms extends Component {
     return (
       <div>
         <p key={this.props.hero.slug}>
-          {this.props.hero.name} <br />
+          {`${this.props.hero.name} -- Power Level: ${this.props.hero.powerstats.power}`} <br />
           <img
             src={this.props.hero.images.sm}
             alt={`${this.props.hero.name}`}
